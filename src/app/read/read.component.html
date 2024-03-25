@@ -1,0 +1,24 @@
+<!-- src/app/reservation/reservation.component.html -->
+
+<h2>Liste des Réservations</h2>
+
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Est Valide</th>
+    <th>Date debut</th>
+    <th>Date Fin</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let reservation of reservations">
+    <td>{{ reservation.idReservation }}</td>
+    <td>{{ reservation.dateDebut }}</td>
+    <td>{{ reservation.dateFin }}</td>
+    <td>{{ reservation.estValide ? 'Oui' : 'Non' }}</td>
+    <td>
+      <button (click)="deleteReservation(reservation.idReservation)">Supprimer</button>
+    </td>
+  </tr>
+</table>
