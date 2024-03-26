@@ -16,7 +16,10 @@ export class ReservationService {
   getAll(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/findAll`);
   }
-
+  
+addReservation(): Observable<any> {
+    return this.http.post(`${this.baseUrl}/add`, reservation);
+  }
 
   addReservation(reservation: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/add`, reservation);
