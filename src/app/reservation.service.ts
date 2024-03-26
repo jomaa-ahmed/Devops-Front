@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ReservationService {
 
-  private baseUrl = 'http://192.168.1.11:8087/reservation';
+  private baseUrl = 'http://localhost:8087/reservation';
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,9 @@ export class ReservationService {
   }
 
 
+  addReservation(reservation: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/add`, reservation);
+  }
 
   delete(id: any): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/delete/${id}`);
