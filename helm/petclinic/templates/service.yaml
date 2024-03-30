@@ -1,14 +1,12 @@
-# Service - LoadBalancer
-# # pb-service -lb.yml
 apiVersion: v1
 kind: Service
 metadata:
-  name: petclinic-service
+  name: devops-service
   labels:
-    app: petclinic-app
+    app: petclinic-app   # Match the labels of your pods
 spec:
   selector:
-    app: petclinic-app
+    app: petclinic-app   # Match the labels of your pods
   type: LoadBalancer
   ports:
   - nodePort: 32751

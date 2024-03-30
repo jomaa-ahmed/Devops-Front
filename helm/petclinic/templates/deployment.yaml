@@ -20,7 +20,7 @@ spec:
         app: petclinic-app
     spec:
       containers:
-      - name: petclinic-container
+      - name: devops-integration-front 
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         resources:
